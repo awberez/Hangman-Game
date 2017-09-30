@@ -22,7 +22,7 @@ $(function(){
 		for (i = 0; i < word.length; i++) {
 			var wordLetter = $("<span>");
 			$(wordLetter).attr('id', "letterID" + [i]);;
-        	$(wordLetter).addClass("hiddenLetter");
+        	$(wordLetter).addClass("hiddenLetter visibleLetter");
         	$(wordLetter).text(word.slice(i,i+1));
         	$(wordLetter).attr("data-code", word.charCodeAt(i,i+1));
         	$("#display").append($(wordLetter));
