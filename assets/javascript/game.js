@@ -1,7 +1,6 @@
 $(function(){
 
-	var userGuess = 15;
-	var userFail = 0;
+	var userGuess = 7;
 	var userWin = 0;
 	var userLoss = 0;
 	var trophyCount = 0;
@@ -37,10 +36,9 @@ $(function(){
 	}
 
 	function resetGame() {
-		userGuess = 15;
-		userFail = 0;
-		$("#guessesLeft").text("Remaining Guesses: " + userGuess);
-		$("#guessesMade").text("Guesses Made: (none)");
+		userGuess = 7;
+		$("#guessesLeft").text("Remaining Wrong Guesses: " + userGuess);
+		$("#guessesMade").text("Wrong Guesses: (none)");
 		$("#display").empty();
 		wordChoices.splice(random, 1);
 		arrayReset.push(chosenWord);
@@ -79,16 +77,9 @@ $(function(){
 
 	$(document).keyup(function(e) {
 		var userChoice = String.fromCharCode(event.keyCode);
+		userFail = 0;
         if (event.keyCode >= 65 && event.keyCode <= 90 && userLetters(lettersGuessed, event.keyCode) == false) {
         	lettersGuessed.push(event.keyCode);
-        	userGuess--;
-        	$("#guessesLeft").text("Remaining Guesses: " + userGuess);
-        	if (userGuess == 14) {
-	            $("#guessesMade").text("Guesses Made: " + userChoice);
-	        }
-	        else {
-	            $("#guessesMade").append(", " + userChoice);
-	        }
         	for (i = 0; i < chosenWord.length; i++) {
         		var correctLetter = String.fromCharCode($("#letterID" + i.toString()).attr("data-code"));
 	        	if (userChoice == correctLetter) {
@@ -110,7 +101,8 @@ $(function(){
 	        		userFail++;
 	        	}
 	        	if (userFail == chosenWord.length) {
-	        		userFail = 0;
+	        		userGuess--;
+		        	$("#guessesLeft").text("Remaining Wrong Guesses: " + userGuess);
 	        		if (userGuess == 0) {
 	        			userLoss++;
 	        			$("#userLosses").text("Losses: " + userLoss);
@@ -122,6 +114,12 @@ $(function(){
 	        			}
 	        			resetGame();
 	        		}
+	        		else if (userGuess == 6) {
+			            $("#guessesMade").text("Wrong Guesses: " + userChoice);
+			        }
+			        else {
+			            $("#guessesMade").append(", " + userChoice);
+			        }
 	        	}
 	        }
     	}
