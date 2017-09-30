@@ -4,7 +4,7 @@ $(function(){
 	var userFail = 0;
 	var userWin = 0;
 	var userLoss = 0;
-	var wordChoices = ["weaselbag"];
+	var wordChoices = ["potato", "steak", "jive", "cyclical", "garage", "institution", "express", "dinosaur", "viaduct", "delusion", "ankle"];
 	var random = randomWord()
 	var chosenWord = wordChoices[random].toUpperCase();
 	var correctGuess = chosenWord.length;
