@@ -9,6 +9,7 @@ $(function(){
 	var chosenWord = wordChoices[random].toUpperCase();
 	var correctGuess = chosenWord.length;
 	var lettersGuessed = []
+	var arrayReset = []
 
 	function randomWord() {
   		min = Math.ceil(0);
@@ -40,6 +41,7 @@ $(function(){
 		$("#guessesMade").text("Guesses Made: (none)");
 		$("#display").empty();
 		wordChoices.splice(random, 1);
+		arrayReset.splice(chosenWord.toLowerCase());
 		if (wordChoices.length >= 1) {
 			lettersGuessed = []
 			random = randomWord()
@@ -62,7 +64,8 @@ $(function(){
 	}
 
 	$("#display").on("click", ".reset-btn", function() {
-		lettersGuessed = []
+		lettersGuessed = arrayReset
+		arrayReset = []
     	$("#display").empty();
 		userWin = 0;
 		$("#userWins").text("Wins: 0");
