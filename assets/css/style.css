@@ -1,0 +1,13 @@
+span {
+	 display: inline-block;
+	 font-size: 20px;
+}
+
+.hiddenLetter {
+	color: white;
+	border-style: solid;
+	border-color: black;
+	margin: 5px;
+	padding: 5px;
+	width: 30px;
+}
