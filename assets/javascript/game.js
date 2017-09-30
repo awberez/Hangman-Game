@@ -63,23 +63,6 @@ $(function(){
 		}
 	}
 
-	$("#display").on("click", ".reset-btn", function() {
-		lettersGuessed = []
-		wordChoices = arrayReset
-		arrayReset = []
-    	$("#display").empty();
-		userWin = 0;
-		$("#userWins").text("Wins: 0");
-		userLoss = 0;
-		$("#userLosses").text("Losses: 0");
-		$("#winningWords").text("Winning Words: (none)");
-		$("#losingWords").text("Losing Words: (none)");
-       	random = randomWord();
-		chosenWord = wordChoices[random].toUpperCase();
-		correctGuess = chosenWord.length;
-		wordString(chosenWord);
-    });
-
 	wordString(chosenWord);
 
 	$(document).keyup(function(e) {
@@ -130,6 +113,23 @@ $(function(){
 	        	}
 	        }
     	}
+    });
+
+    $("#display").on("click", ".reset-btn", function() {
+		lettersGuessed = []
+		wordChoices = arrayReset
+		arrayReset = []
+    	$("#display").empty();
+		userWin = 0;
+		$("#userWins").text("Wins: 0");
+		userLoss = 0;
+		$("#userLosses").text("Losses: 0");
+		$("#winningWords").text("Winning Words: (none)");
+		$("#losingWords").text("Losing Words: (none)");
+       	random = randomWord();
+		chosenWord = wordChoices[random].toUpperCase();
+		correctGuess = chosenWord.length;
+		wordString(chosenWord);
     });
 
 });
