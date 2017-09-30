@@ -5,7 +5,8 @@ $(function(){
 	var userWin = 0;
 	var userLoss = 0;
 	var wordChoices = ["potato", "steak", "jive", "macbook", "garage"];
-	var chosenWord = wordChoices[randomWord()].toUpperCase();
+	var random = randomWord()
+	var chosenWord = wordChoices[random].toUpperCase();
 	var correctGuess = chosenWord.length;
 	var lettersGuessed = []
 
@@ -21,7 +22,6 @@ $(function(){
 			$(wordLetter).attr('id', "letterID" + [i]);;
         	$(wordLetter).addClass("hiddenLetter");
         	$(wordLetter).text(word.slice(i,i+1));
-        	console.log(word.slice(i,i+1));
         	$(wordLetter).attr("data-code", word.charCodeAt(i,i+1));
         	$("#display").append($(wordLetter));
 		}
@@ -36,15 +36,46 @@ $(function(){
 	function resetGame() {
 		userGuess = 15;
 		userFail = 0;
-		lettersGuessed = []
 		$("#guessesLeft").text("Remaining Guesses: " + userGuess);
 		$("#guessesMade").text("Guesses Made: (none)");
 		$("#display").empty();
-		randomWord();
-		chosenWord = wordChoices[randomWord()].toUpperCase();
+		wordChoices.splice(random, 1);
+		if (wordChoices.length >= 1) {
+			lettersGuessed = []
+			random = randomWord()
+			chosenWord = wordChoices[random].toUpperCase();
+			correctGuess = chosenWord.length;
+			wordString(chosenWord);
+		}
+		else {
+			var lowEnd = 65;
+			var highEnd = 90;
+			while(lowEnd <= highEnd){
+				lettersGuessed.push(lowEnd++);
+			}
+			var resetBtn = $("<button>");
+        	$(resetBtn).addClass("btn btn-danger reset-btn");
+        	$(resetBtn).text("Play Again?");
+        	$("#display").text("Game Over! ");
+        	$("#display").append(resetBtn);
+		}
+	}
+
+	$("#display").on("click", ".reset-btn", function() {
+		lettersGuessed = []
+    	$("#display").empty();
+		userWin = 0;
+		$("#userWins").text("Wins: 0");
+		userLoss = 0;
+		$("#userLosses").text("Losses: 0");
+		$("#winningWords").text("Winning Words: (none)");
+		$("#losingWords").text("Losing Words: (none)");
+		wordChoices = ["potato", "steak", "jive", "macbook", "garage"];
+       	random = randomWord();
+		chosenWord = wordChoices[random].toUpperCase();
 		correctGuess = chosenWord.length;
 		wordString(chosenWord);
-	}
+    });
 
 	wordString(chosenWord);
 
@@ -85,6 +116,12 @@ $(function(){
 	        		if (userGuess == 0) {
 	        			userLoss++;
 	        			$("#userLosses").text("Losses: " + userLoss);
+	        			if (userLoss == 1) {
+	        				$("#losingWords").text("Losing Words: " + chosenWord);
+	        			}
+	        			else {
+	        				$("#losingWords").append(", " + chosenWord);
+	        			}
 	        			resetGame();
 	        		}
 	        	}
