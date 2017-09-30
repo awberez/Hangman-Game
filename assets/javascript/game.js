@@ -41,7 +41,7 @@ $(function(){
 		$("#guessesMade").text("Guesses Made: (none)");
 		$("#display").empty();
 		wordChoices.splice(random, 1);
-		arrayReset.push(chosenWord.toLowerCase());
+		arrayReset.push(chosenWord);
 		if (wordChoices.length >= 1) {
 			lettersGuessed = []
 			random = randomWord()
