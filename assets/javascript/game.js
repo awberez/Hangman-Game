@@ -4,7 +4,7 @@ $(function(){
 	var userFail = 0;
 	var userWin = 0;
 	var userLoss = 0;
-	var wordChoices = ["potato", "steak", "jive", "macbook", "garage"];
+	var wordChoices = ["weaselbag"];
 	var random = randomWord()
 	var chosenWord = wordChoices[random].toUpperCase();
 	var correctGuess = chosenWord.length;
