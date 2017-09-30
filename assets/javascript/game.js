@@ -8,6 +8,7 @@ $(function(){
 	var random = randomWord()
 	var chosenWord = wordChoices[random].toUpperCase();
 	var correctGuess = chosenWord.length;
+	var gameWords = 4
 	var lettersGuessed = []
 	var arrayReset = []
 
@@ -42,9 +43,10 @@ $(function(){
 		$("#display").empty();
 		wordChoices.splice(random, 1);
 		arrayReset.push(chosenWord);
-		if (wordChoices.length >= 1) {
-			lettersGuessed = []
-			random = randomWord()
+		if (gameWords >= 1) {
+			gameWords--;
+			lettersGuessed = [];
+			random = randomWord();
 			chosenWord = wordChoices[random].toUpperCase();
 			correctGuess = chosenWord.length;
 			wordString(chosenWord);
@@ -117,7 +119,7 @@ $(function(){
 
     $("#display").on("click", ".reset-btn", function() {
 		lettersGuessed = []
-		wordChoices = arrayReset
+		$.merge(wordChoices, arrayReset)
 		arrayReset = []
     	$("#display").empty();
 		userWin = 0;
@@ -129,6 +131,7 @@ $(function(){
        	random = randomWord();
 		chosenWord = wordChoices[random].toUpperCase();
 		correctGuess = chosenWord.length;
+		gameWords = 4;
 		wordString(chosenWord);
     });
 
