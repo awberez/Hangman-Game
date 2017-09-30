@@ -41,7 +41,7 @@ $(function(){
 		$("#guessesMade").text("Guesses Made: (none)");
 		$("#display").empty();
 		wordChoices.splice(random, 1);
-		arrayReset.splice(chosenWord.toLowerCase());
+		arrayReset.splice(0, 0, chosenWord.toLowerCase());
 		if (wordChoices.length >= 1) {
 			lettersGuessed = []
 			random = randomWord()
@@ -64,7 +64,8 @@ $(function(){
 	}
 
 	$("#display").on("click", ".reset-btn", function() {
-		lettersGuessed = arrayReset
+		lettersGuessed = []
+		wordChoices = arrayReset
 		arrayReset = []
     	$("#display").empty();
 		userWin = 0;
@@ -73,7 +74,6 @@ $(function(){
 		$("#userLosses").text("Losses: 0");
 		$("#winningWords").text("Winning Words: (none)");
 		$("#losingWords").text("Losing Words: (none)");
-		wordChoices = ["potato", "steak", "jive", "macbook", "garage"];
        	random = randomWord();
 		chosenWord = wordChoices[random].toUpperCase();
 		correctGuess = chosenWord.length;
