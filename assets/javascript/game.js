@@ -68,6 +68,12 @@ $(function(){
 	        		if (correctGuess == 0) {
 	        			userWin++;
 	        			$("#userWins").text("Wins: " + userWin);
+	        			if (userWin == 1) {
+	        				$("#winningWords").text("Winning Words: " + chosenWord);
+	        			}
+	        			else {
+	        				$("#winningWords").append(", " + chosenWord);
+	        			}
 	        			resetGame();
 	        		}
 	        	}
