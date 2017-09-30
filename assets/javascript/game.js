@@ -4,7 +4,7 @@ $(function(){
 	var userFail = 0;
 	var userWin = 0;
 	var userLoss = 0;
-	var wordChoices = ["potato", "steak", "jive", "cyclical", "garage", "institution", "express", "dinosaur", "viaduct", "delusion", "ankle"];
+	var wordChoices = ["potato", "steak", "jive", "cyclical", "garage", "institution", "express", "dinosaur", "viaduct", "delusion", "ankle", "jolly", "listing", "stimulation", "tense", "downstairs", "golf", "performance", "competition", "valuable", "accuracy", "equilibrium", "fiddle", "football", "stability"];
 	var random = randomWord()
 	var chosenWord = wordChoices[random].toUpperCase();
 	var correctGuess = chosenWord.length;
