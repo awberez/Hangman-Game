@@ -73,6 +73,7 @@ $(function(){
         	$(resetBtn).text("Play Again?");
         	$("#display").text("Game Over! ");
         	$("#display").append(resetBtn);
+        	$("#wordsLeft").empty();
 		}
 	}
 
