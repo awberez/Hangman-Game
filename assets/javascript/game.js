@@ -4,6 +4,7 @@ $(function(){
 	var userWin = 0;
 	var userLoss = 0;
 	var trophyCount = 0;
+	var wordCount = 1;
 	var wordChoices = ["potato", "steak", "jive", "cyclical", "garage", "institution", "express", "dinosaur", "viaduct", "delusion", "ankle", "jolly", "listing", "stimulation", "tense", "downstairs", "golf", "performance", "competition", "valuable", "accuracy", "equilibrium", "fiddle", "football", "stability"];
 	var random = randomWord()
 	var chosenWord = wordChoices[random].toUpperCase();
@@ -44,6 +45,8 @@ $(function(){
 		arrayReset.push(chosenWord);
 		if (gameWords >= 1) {
 			gameWords--;
+			wordCount++;
+			$("#wordsLeft").text("Word " + wordCount + " of 5:");
 			lettersGuessed = [];
 			random = randomWord();
 			chosenWord = wordChoices[random].toUpperCase();
@@ -134,6 +137,8 @@ $(function(){
 		$("#userWins").text("Wins: 0");
 		userLoss = 0;
 		$("#userLosses").text("Losses: 0");
+		wordCount = 1;
+		$("#wordsLeft").text("Word " + wordCount + " of 5:");
 		$("#winningWords").text("Winning Words: (none)");
 		$("#losingWords").text("Losing Words: (none)");
        	random = randomWord();
