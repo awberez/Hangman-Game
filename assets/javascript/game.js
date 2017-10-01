@@ -91,7 +91,6 @@ $(function(){
 	        		correctGuess--;
 	        		if (correctGuess == 0) {
 	        			userWin++;
-	        			$("#userWins").text("Wins: " + userWin);
 	        			if (userWin == 1) {
 	        				$("#winningWords").text("Winning Words: " + chosenWord);
 	        			}
@@ -109,7 +108,6 @@ $(function(){
 		        	$("#guessesLeft").text("Remaining Wrong Guesses: " + userGuess);
 	        		if (userGuess == 0) {
 	        			userLoss++;
-	        			$("#userLosses").text("Losses: " + userLoss);
 	        			if (userLoss == 1) {
 	        				$("#losingWords").text("Losing Words: " + chosenWord);
 	        			}
@@ -135,9 +133,7 @@ $(function(){
 		arrayReset = []
     	$("#display").empty();
 		userWin = 0;
-		$("#userWins").text("Wins: 0");
 		userLoss = 0;
-		$("#userLosses").text("Losses: 0");
 		wordCount = 1;
 		$("#wordsLeft").text("Word " + wordCount + " of 5:");
 		$("#winningWords").text("Winning Words: (none)");
