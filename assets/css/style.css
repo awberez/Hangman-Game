@@ -1,9 +1,13 @@
 .visibleLetter {
-	 display: inline-block;
-	 font-size: 20px;
-	 margin: 5px;
-	 padding: 5px;
-	 width: 30px;
+	display: inline-block;
+	font-size: 20px;
+	font-weight: bold;
+	width: 30px;
+	margin-left: 3px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 50px;
+	height: 50px;
 }
 
 .hiddenLetter {
@@ -11,9 +15,6 @@
 }
 .hiddenLetter:before {
 	visibility: visible;
-	font-size: 20px;
 	content: "_";
-	border-style: solid;
-	border-color: black;
 	padding: 5px;
 }
