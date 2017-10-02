@@ -33,7 +33,7 @@ body {
 	height: 50px;
 }
 
-.visibleLetter span {
+#display span {
 	padding-left: 10px;
 }
 
