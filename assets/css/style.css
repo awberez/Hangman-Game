@@ -24,6 +24,10 @@ html {
 	padding-bottom: 0;
 }
 
+.hangman-game {
+	font-family: 'Rye', cursive;
+}
+
 .jumbotron {
 	margin-top: 30px;
 	border-style: solid;
