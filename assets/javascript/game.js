@@ -5,7 +5,7 @@ $(function(){
 	var userLoss = 0;
 	var trophyCount = 0;
 	var wordCount = 1;
-	var wordChoices = ["potato", "steak", "jive", "cyclical", "garage", "institution", "express", "dinosaur", "viaduct", "delusion", "ankle", "jolly", "listing", "stimulation", "tense", "downstairs", "golf", "performance", "competition", "valuable", "accuracy", "equilibrium", "fiddle", "football", "stability"];
+	var wordChoices = ["reserve", "potato", "steak", "jive", "cyclical", "garage", "institution", "express", "dinosaur", "viaduct", "delusion", "ankle", "jolly", "listing", "stimulation", "tense", "downstairs", "golf", "performance", "competition", "valuable", "accuracy", "equilibrium", "fiddle", "football", "stability", "maker", "tolerance", "travel", "audience", "overlook", "certainty", "newspaper", "agenda", "seminar", "envelope", "standpoint", "intended", "mumble", "customer", "seventh", "overseas"];
 	var random = randomWord()
 	var chosenWord = wordChoices[random].toUpperCase();
 	var correctGuess = chosenWord.length;
@@ -38,8 +38,9 @@ $(function(){
 
 	function resetGame() {
 		userGuess = 7;
-		$("#guessesLeft").text("Remaining Wrong Guesses: " + userGuess);
-		$("#guessesMade").text("Wrong Guesses: (none)");
+		$("#guessesLeft").text("Wrong Guesses (" + userGuess + " left)");
+		$("#guessesMade").addClass("filler");
+		$("#guessesMade").text("none");
 		$("#display").empty();
 		wordChoices.splice(random, 1);
 		arrayReset.push(chosenWord);
@@ -56,8 +57,10 @@ $(function(){
 		else {
 			if (userWin > userLoss) {
 				trophyCount++;
+				$("#trophies").text(trophyCount);
+				$("#userTrophies").removeClass("filler");
 				if (trophyCount == 1 ) {
-					$("#userTrophies").html("Trophies: " + '<i class="fa fa-trophy" aria-hidden="true"></i>');
+					$("#userTrophies").html('<i class="fa fa-trophy" aria-hidden="true"></i>');
 				}
 				else {
 					$("#userTrophies").append(" " + '<i class="fa fa-trophy" aria-hidden="true"></i>');
@@ -71,7 +74,7 @@ $(function(){
 			var resetBtn = $("<button>");
         	$(resetBtn).addClass("btn btn-danger reset-btn");
         	$(resetBtn).text("Play Again?");
-        	$("#display").html('<h3>Game Over! </h3>');
+        	$("#display").html('<h2>Game Over! </h2><hr>');
         	$("#display").append(resetBtn);
         	$("#wordsLeft").empty();
 		}
@@ -91,8 +94,10 @@ $(function(){
 	        		correctGuess--;
 	        		if (correctGuess == 0) {
 	        			userWin++;
+	        			$("#winningWords").removeClass("filler");
+	        			$("#wins").text(userWin);
 	        			if (userWin == 1) {
-	        				$("#winningWords").text("Winning Words: " + chosenWord);
+	        				$("#winningWords").text(chosenWord);
 	        			}
 	        			else {
 	        				$("#winningWords").append(", " + chosenWord);
@@ -105,11 +110,13 @@ $(function(){
 	        	}
 	        	if (userFail == chosenWord.length) {
 	        		userGuess--;
-		        	$("#guessesLeft").text("Remaining Wrong Guesses: " + userGuess);
+		        	$("#guessesLeft").text("Wrong Guesses (" + userGuess + " left)");
 	        		if (userGuess == 0) {
 	        			userLoss++;
+	        			$("#losingWords").removeClass("filler");
+	        			$("#losses").text(userLoss);
 	        			if (userLoss == 1) {
-	        				$("#losingWords").text("Losing Words: " + chosenWord);
+	        				$("#losingWords").text(chosenWord);
 	        			}
 	        			else {
 	        				$("#losingWords").append(", " + chosenWord);
@@ -117,7 +124,8 @@ $(function(){
 	        			resetGame();
 	        		}
 	        		else if (userGuess == 6) {
-			            $("#guessesMade").text("Wrong Guesses: " + userChoice);
+	        			$("#guessesMade").removeClass("filler");
+			            $("#guessesMade").text(userChoice);
 			        }
 			        else {
 			            $("#guessesMade").append(", " + userChoice);
@@ -135,9 +143,13 @@ $(function(){
 		userWin = 0;
 		userLoss = 0;
 		wordCount = 1;
+		$("#wins").text(userWin);
+		$("#losses").text(userLoss);
 		$("#wordsLeft").text("Word " + wordCount + " of 5:");
-		$("#winningWords").text("Winning Words: (none)");
-		$("#losingWords").text("Losing Words: (none)");
+		$("#winningWords").addClass("filler");
+		$("#winningWords").text("(none)");
+		$("#losingWords").addClass("filler");
+		$("#losingWords").text("(none)");
        	random = randomWord();
 		chosenWord = wordChoices[random].toUpperCase();
 		correctGuess = chosenWord.length;

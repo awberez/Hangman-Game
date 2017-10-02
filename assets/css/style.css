@@ -1,3 +1,27 @@
+body {
+	background-image: url(../images/west.jpg);
+	background-size: auto 1500px;
+	background-repeat: no-repeat;
+}
+
+.jumbotron {
+	margin-top: 30px;
+	border-style: solid;
+	border-width: 8px;
+	padding: 20px;
+}
+
+.jumbotron h1 {
+	font-size: 90px;
+	
+	margin-top: 0px;
+	padding-bottom: 10px;
+}
+
+.jumbotron h3, h4 {
+	
+}
+
 .visibleLetter {
 	display: inline-block;
 	font-size: 20px;
@@ -17,4 +41,37 @@
 	visibility: visible;
 	content: "_";
 	padding: 5px;
+}
+
+.filler {
+	color: white !important;
+	text-shadow: none !important;
+}
+
+.label {
+	padding: 3px 7px 3px 7px;
+	font-size: 15px;
+}
+
+.panel {
+	font-size: 20px;
+	border-width: 8px;
+	border-radius: 10px;
+}
+
+.panel h3 {
+	font-size: 18px;
+	
+}
+
+.trophy-color {
+	color: gold;
+	text-shadow: 1px 1px #c99536;
+}
+
+.btn {
+	width: 150px;
+    height: 50px;
+    font-size: 22px;
+    box-shadow: 3px 3px 5px gray;
 }
