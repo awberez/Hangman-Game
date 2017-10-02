@@ -1,6 +1,27 @@
 body {
 	background-image: url(../images/west-background2.jpg);
 	background-repeat: no-repeat;
+	margin-bottom: 95px;
+}
+
+html {
+	  position: relative;
+	  min-height: 100%;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 95px;
+	background: rgba(200, 54, 54, 0);
+	font-size: 20px;
+	line-height: 30px;
+}
+
+.footer-panel {
+	padding-top: 7px;
+	padding-bottom: 0;
 }
 
 .jumbotron {
@@ -87,10 +108,61 @@ body {
 	font-family: 'Rye', cursive;
 }
 
-.btn {
+.reset-btn {
 	width: 155px;
     height: 50px;
     font-size: 22px;
     box-shadow: 3px 3px 5px gray;
     font-family: 'Rye', cursive;
+}
+
+.psychic {
+	font-family: 'Kaushan Script', cursive;
+}
+
+.btn-game { 
+  color: #ffffff; 
+  background-color: #611BBD; 
+  border-color: #130269; 
+  padding: 5px;
+} 
+ 
+.btn-game:hover, 
+.btn-game:focus, 
+.btn-game:active, 
+.btn-game.active, 
+.open .dropdown-toggle.btn-game { 
+  color: #ffffff; 
+  background-color: #49247A; 
+  border-color: #130269; 
+} 
+ 
+.btn-game:active, 
+.btn-game.active, 
+.open .dropdown-toggle.btn-game { 
+  background-image: none; 
+} 
+ 
+.btn-game.disabled, 
+.btn-game[disabled], 
+fieldset[disabled] .btn-game, 
+.btn-game.disabled:hover, 
+.btn-game[disabled]:hover, 
+fieldset[disabled] .btn-game:hover, 
+.btn-game.disabled:focus, 
+.btn-game[disabled]:focus, 
+fieldset[disabled] .btn-game:focus, 
+.btn-game.disabled:active, 
+.btn-game[disabled]:active, 
+fieldset[disabled] .btn-game:active, 
+.btn-game.disabled.active, 
+.btn-game[disabled].active, 
+fieldset[disabled] .btn-game.active { 
+  background-color: #611BBD; 
+  border-color: #130269; 
+} 
+ 
+.btn-game .badge { 
+  color: #611BBD; 
+  background-color: #ffffff; 
 }
