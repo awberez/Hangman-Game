@@ -37,6 +37,7 @@ $(function(){
 	}
 
 	function resetGame() {
+		$(".letter-button").removeAttr("disabled");
 		userGuess = 7;
 		$("#guessesLeft").text("Wrong Guesses (" + userGuess + " left)");
 		$("#guessesMade").addClass("filler");
@@ -95,6 +96,7 @@ $(function(){
     });
 
     $("#mobileKeyboard").on("click", ".letter-button", function() {	
+    	$(this).attr("disabled", "disabled")
 		var e = new Event("keyup");
 		e.keyCode = $(this).attr("data-letter")
 		e.which = e.keyCode;
