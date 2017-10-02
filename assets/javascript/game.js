@@ -95,12 +95,14 @@ $(function(){
       	}
     });
 
-    $("#mobileKeyboard").on("click", ".letter-button", function() {	
-    	$(this).attr("disabled", "disabled")
-		var e = new Event("keyup");
-		e.keyCode = $(this).attr("data-letter")
-		e.which = e.keyCode;
-		document.dispatchEvent(e);
+    $("#mobileKeyboard").on("click", ".letter-button", function() {
+    	if (gameWords != 0) {
+	    	$(this).attr("disabled", "disabled")
+			var e = new Event("keyup");
+			e.keyCode = $(this).attr("data-letter")
+			e.which = e.keyCode;
+			document.dispatchEvent(e);
+		}
     });
 
 	$(document).keyup(function(e) {
