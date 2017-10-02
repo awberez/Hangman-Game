@@ -142,13 +142,9 @@ button:focus {
 }
 
 .letter-button {
-	width: 35px;
-    height: 35px;
+	width: 30px;
     margin: 5px;
-    line-height: 20px;
-    font-size: 20px;
-    border-radius: 20%;
-    text-align: center;
+    padding-left: 1%;
 }
  
 .btn-game:hover, 
