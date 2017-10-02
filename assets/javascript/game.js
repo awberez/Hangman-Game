@@ -82,6 +82,25 @@ $(function(){
 
 	wordString(chosenWord);
 
+	$(".btn-link").on("click", function() {
+    	$("#mobileKeyboard").html('<div class="container"><div class="row"><div class="col-sm-6 col-sm-offset-3"><div class="panel panel-default"><div id="keyboard" class="panel-body keyboard-panel"></div></div></div></div></div>');
+    	var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    	for(i=0; i<letters.length; i++){
+	        var letterBtn = $("<button>");
+	        $(letterBtn).addClass("letter-button letter");
+	        $(letterBtn).attr("data-letter", i + 65);
+	        $(letterBtn).text(letters[i]);
+	        $("#keyboard").append(letterBtn);
+      	}
+    });
+
+    $("#mobileKeyboard").on("click", ".letter-button", function() {	
+		var e = new Event("keyup");
+		e.keyCode = $(this).attr("data-letter")
+		e.which = e.keyCode;
+		document.dispatchEvent(e);
+    });
+
 	$(document).keyup(function(e) {
 		var userChoice = String.fromCharCode(event.keyCode);
 		userFail = 0;
