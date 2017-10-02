@@ -148,7 +148,6 @@ button:focus {
     line-height: 20px;
     font-size: 20px;
     border-radius: 20%;
-    box-shadow: 2px 2px 5px gray;
 }
  
 .btn-game:hover, 
