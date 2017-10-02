@@ -56,6 +56,7 @@ $(function(){
 			wordString(chosenWord);
 		}
 		else {
+			gameWords--;
 			if (userWin > userLoss) {
 				trophyCount++;
 				$("#trophies").text(trophyCount);
@@ -96,7 +97,7 @@ $(function(){
     });
 
     $("#mobileKeyboard").on("click", ".letter-button", function() {
-    	if (gameWords != 0) {
+    	if (gameWords >= 0) {
 	    	$(this).attr("disabled", "disabled")
 			var e = new Event("keyup");
 			e.keyCode = $(this).attr("data-letter")
