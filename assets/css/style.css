@@ -3,10 +3,6 @@ body {
 	background-repeat: no-repeat;
 }
 
-span {
-	padding-left: 10px;
-}
-
 .jumbotron {
 	margin-top: 30px;
 	border-style: solid;
@@ -35,6 +31,10 @@ span {
 	vertical-align: middle;
 	line-height: 50px;
 	height: 50px;
+}
+
+.visibleLetter span {
+	padding-left: 10px;
 }
 
 .hiddenLetter {
