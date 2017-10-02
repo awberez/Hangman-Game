@@ -45,8 +45,8 @@ $(function(){
 		$("#display").empty();
 		wordChoices.splice(random, 1);
 		arrayReset.push(chosenWord);
-		if (gameWords >= 1) {
-			gameWords--;
+		gameWords--;
+		if (gameWords >= 0) {
 			wordCount++;
 			$("#wordsLeft").text("Word " + wordCount + " of 5:");
 			lettersGuessed = [];
@@ -56,7 +56,6 @@ $(function(){
 			wordString(chosenWord);
 		}
 		else {
-			gameWords--;
 			if (userWin > userLoss) {
 				trophyCount++;
 				$("#trophies").text(trophyCount);
