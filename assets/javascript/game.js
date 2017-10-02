@@ -74,7 +74,7 @@ $(function(){
 			var resetBtn = $("<button>");
         	$(resetBtn).addClass("btn btn-danger reset-btn");
         	$(resetBtn).text("Play Again?");
-        	$("#display").html('<h2>Game Over! </h2><hr>');
+        	$("#display").html('<h1 class="restart-text">Game Over!</h1><hr>');
         	$("#display").append(resetBtn);
         	$("#wordsLeft").empty();
 		}
