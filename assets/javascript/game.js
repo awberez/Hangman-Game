@@ -96,12 +96,17 @@ $(function(){
     });
 
     $("#mobileKeyboard").on("click", ".letter-button", function() {
-    	if (gameWords >= 0) {
-	    	$(this).attr("disabled", "disabled")
+    	if (gameWords >= 0 && userLetters(lettersGuessed, parseInt($(this).attr("data-letter"))) == false) {
+	    	$(this).attr("disabled", "disabled");
 			var e = new Event("keyup");
-			e.keyCode = $(this).attr("data-letter")
+			e.keyCode = $(this).attr("data-letter");
 			e.which = e.keyCode;
 			document.dispatchEvent(e);
+			lettersGuessed.push(parseInt($(this).attr("data-letter")));
+			console.log("push");
+		}
+		else if (gameWords >= 0 && userLetters(lettersGuessed, parseInt($(this).attr("data-letter"))) == true) {
+			$(this).attr("disabled", "disabled");
 		}
     });
 
