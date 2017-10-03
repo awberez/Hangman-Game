@@ -110,6 +110,11 @@ button:focus {
 	padding-right: 0px;
 }
 
+.keyboard-panel {
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
 .trophy-color {
 	color: gold;
 	text-shadow: 1px 1px #c99536;
@@ -146,7 +151,7 @@ button:focus {
 
 .letter-button {
 	width: 30px;
-    margin: 4px;
+    margin: 3px;
     padding-left: 1%;
 }
  
