@@ -150,9 +150,7 @@ button:focus {
 }
 
 .letter-button {
-	width: 30px;
     margin: 3px;
-    padding-left: 1%;
 }
  
 .btn-game:hover, 
