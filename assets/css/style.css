@@ -105,6 +105,11 @@ button:focus {
 	margin-top: 0;
 }
 
+.panel-heading {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
 .trophy-color {
 	color: gold;
 	text-shadow: 1px 1px #c99536;
