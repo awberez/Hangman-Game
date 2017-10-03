@@ -88,7 +88,7 @@ $(function(){
     	var letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
     	for(i=0; i<letters.length; i++){
 	        var letterBtn = $("<button>");
-	        $(letterBtn).addClass("letter-button letter");
+	        $(letterBtn).addClass("letter-button");
 	        $(letterBtn).attr("data-letter", i + 65);
 	        $(letterBtn).text(letters[i]);
 	        $("#keyboard").append(letterBtn);
@@ -105,7 +105,6 @@ $(function(){
 			e.which = e.keyCode;
 			document.dispatchEvent(e);
 			lettersGuessed.push(parseInt($(this).attr("data-letter")));
-			console.log("push");
 		}
 		else if (gameWords >= 0 && userLetters(lettersGuessed, parseInt($(this).attr("data-letter"))) == true) {
 			$(this).attr("disabled", "disabled");
