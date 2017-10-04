@@ -99,12 +99,12 @@ $(function(){
 
     $("#mobileKeyboard").on("click", ".letter-button", function() {
     	if (gameWords >= 0 && userLetters(lettersGuessed, parseInt($(this).attr("data-letter"))) == false) {
+	    	lettersGuessed.push(parseInt($(this).attr("data-letter")));
 	    	$(this).attr("disabled", "disabled");
 			var e = new Event("keyup");
 			e.keyCode = $(this).attr("data-letter");
 			e.which = e.keyCode;
 			document.dispatchEvent(e);
-			lettersGuessed.push(parseInt($(this).attr("data-letter")));
 		}
 		else if (gameWords >= 0 && userLetters(lettersGuessed, parseInt($(this).attr("data-letter"))) == true) {
 			$(this).attr("disabled", "disabled");
