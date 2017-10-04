@@ -6,12 +6,12 @@ $(function(){
 	var trophyCount = 0;
 	var wordCount = 1;
 	var wordChoices = ["reserve", "potato", "steak", "jive", "cyclical", "garage", "institution", "express", "dinosaur", "viaduct", "delusion", "ankle", "jolly", "listing", "stimulation", "tense", "downstairs", "golf", "performance", "competition", "valuable", "accuracy", "equilibrium", "fiddle", "football", "stability", "maker", "tolerance", "travel", "audience", "overlook", "certainty", "newspaper", "agenda", "seminar", "envelope", "standpoint", "intended", "mumble", "customer", "seventh", "overseas"];
-	var random = randomWord()
+	var random = randomWord();
 	var chosenWord = wordChoices[random].toUpperCase();
 	var correctGuess = chosenWord.length;
-	var gameWords = 4
-	var lettersGuessed = []
-	var arrayReset = []
+	var gameWords = 4;
+	var lettersGuessed = [];
+	var arrayReset = [];
 
 	function randomWord() {
   		return Math.floor(Math.random() * wordChoices.length);
@@ -162,9 +162,9 @@ $(function(){
     });
 
     $("#display").on("click", ".reset-btn", function() {
-		lettersGuessed = []
+		lettersGuessed = [];
 		$.merge(wordChoices, arrayReset)
-		arrayReset = []
+		arrayReset = [];
     	$("#display").empty();
 		userWin = 0;
 		userLoss = 0;
