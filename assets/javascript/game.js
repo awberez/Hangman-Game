@@ -14,9 +14,7 @@ $(function(){
 	var arrayReset = []
 
 	function randomWord() {
-  		min = Math.ceil(0);
-  		max = Math.floor(wordChoices.length - 1);
-  		return Math.floor(Math.random() * (max - min + 1)) + min;
+  		return Math.floor(Math.random() * wordChoices.length);
 	}
 
 	function wordString(word) {
