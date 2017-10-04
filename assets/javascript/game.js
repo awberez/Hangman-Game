@@ -93,7 +93,6 @@ $(function(){
 	        $(letterBtn).text(letters[i]);
 	        $("#keyboard").append(letterBtn);
       	}
-      	location.href = "#";
 		location.href = "#mobileKeyboard";
     });
 
